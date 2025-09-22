@@ -709,7 +709,7 @@
       const tel = document.getElementById('fone').value.trim();
       if (!nome || !tel) { alert('Preencha Nome e Telefone para baixar.'); return; }
       const link = document.createElement('a');
-      link.href = 'src/pdf/Catalogo 2025 - Decor Colors Andradas.pdf';
+      link.href = '../src/pdf/Catalogo 2025 - Decor Colors Andradas.pdf';
       link.download = 'catalogo-decor-colors-andradas.pdf';
       document.body.appendChild(link); link.click(); link.remove();
       document.getElementById('formMsg').style.display = 'block';

@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Decor Colors | Andradas, MG</title>
+  <link rel="shortcut icon" href="/src/img/Diamante.png" type="image/png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --brand: #0ea5e9;
+      --brand2: #22d3ee;
+      --text: #111827;
+      --muted: #6b7280;
+      --line: #e5e7eb;
+      --bg: #ffffff;
+      --ok: #22c55e;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      transition: all 0.5s;
+    }
+
+    body {
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text)
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit
+    }
+
+    /* ====== HEADER (desktop) ====== */
+    header {
+      position: sticky;
+      top: 0;
+      background: #fff;
+      border-bottom: 1px solid var(--line);
+      z-index: 60
+    }
+
+    .nav {
+      max-width: 1120px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 16px
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo img {
+      width: auto;
+      height: 38px;
+      border-radius: 8px
+    }
+
+    .menu {
+      display: flex;
+      gap: 10px
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 10px 14px;
+      border-radius: 8px;
+      border: 1px solid var(--line);
+      font-weight: 700;
+      font-size: 14px;
+      cursor: pointer
+    }
+
+    .btn.primary {
+      background: linear-gradient(90deg, var(--brand), var(--brand2));
+      color: #fff;
+      border: none
+    }
+
+    .btn.whats {
+      background: var(--ok);
+      color: #fff;
+      border: none
+    }
+
+    /* ===== FLOAT MENU (mobile <600px) ===== */
+    #fab {
+      display: none;
+      position: fixed;
+      right: 16px;
+      bottom: 80px;
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      border: none;
+      background: linear-gradient(90deg, var(--brand), var(--brand2));
+      color: #fff;
+      font-weight: 900;
+      box-shadow: 0 10px 24px rgba(2, 132, 199, .35);
+      z-index: 70;
+    }
+
+    #sheet {
+      display: none;
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: #fff;
+      border-top-left-radius: 18px;
+      border-top-right-radius: 18px;
+      box-shadow: 0 -6px 24px rgba(0, 0, 0, .2);
+      padding: 16px;
+      z-index: 80
+    }
+
+    #sheet .s-row {
+      display: grid;
+      gap: 10px
+    }
+
+    #scrim {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, .45);
+      z-index: 75
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      position: relative;
+      min-height: 60vh;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      padding: 40px 16px;
+      isolation: isolate
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: url('https://img.freepik.com/fotos-gratis/sofa-em-uma-sala-de-estar-decorada-com-desenho-folclorico-brasileiro_23-2150794221.jpg') center/cover no-repeat;
+      z-index: -2
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, .45);
+      z-index: -1
+    }
+
+    .hero h1 {
+      color: #fff;
+      font-size: clamp(28px, 6vw, 54px);
+      line-height: 1.1;
+      font-weight: 900;
+      max-width: 960px;
+      margin: 0 auto 10px
+    }
+
+    .hero p {
+      color: #e5e7eb;
+      font-size: clamp(14px, 2.8vw, 18px);
+      max-width: 800px;
+      margin: 0 auto 20px
+    }
+
+    .ctaRow {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap
+    }
+
+    /* ===== COMMON SECTIONS ===== */
+    .section {
+      padding: 32px 16px
+    }
+
+    .section h2 {
+      text-align: center;
+      font-size: 22px;
+      font-weight: 900;
+      margin-bottom: 12px
+    }
+
+    .section p.lead {
+      text-align: center;
+      color: var(--muted);
+      margin-bottom: 16px
+    }
+
+    /* ===== CONTATO + MAP ===== */
+    .contact {
+      display: grid;
+      gap: 16px;
+      max-width: 1080px;
+      margin: 0 auto
+    }
+
+    .card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 16px
+    }
+
+    .list {
+      display: grid;
+      gap: 8px;
+      font-size: 14px
+    }
+
+    .row strong {
+      display: block;
+      font-weight: 800
+    }
+
+    .map iframe {
+      width: 100%;
+      height: 280px;
+      border: 0;
+      border-radius: 12px
+    }
+
+    /* ===== HORARIOS ===== */
+    .hours {
+      background: #f8fafc;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      padding: 24px 16px;
+      text-align: center
+    }
+
+    .hours h2 {
+      font-size: 20px;
+      font-weight: 900;
+      margin-bottom: 6px
+    }
+
+    .hours p {
+      font-size: 15px;
+      color: #4b5563
+    }
+
+    /* ===== PRODUTOS (COMPACTO) ===== */
+    .prod-grid {
+      max-width: 1120px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px
+    }
+
+    .productCard {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 12px;
+      display: grid;
+      grid-template-columns: 110px 1fr;
+      gap: 12px;
+      align-items: center
+    }
+
+    .productCard img {
+      width: 100%;
+      height: 100px;
+      object-fit: contain;
+      background: #f9fafb;
+      border-radius: 8px
+    }
+
+    .pTitle {
+      font: 800 16px/1.2 Inter;
+      margin-bottom: 4px
+    }
+
+    .pDesc {
+      color: #374151;
+      font-size: 13px;
+      margin-bottom: 8px
+    }
+
+    .pRow .btn {
+      padding: 8px 12px;
+      font-size: 12px
+    }
+
+    /* ===== CATALOGO ===== */
+    .catalog {
+      position: relative;
+      overflow: hidden;
+      isolation: isolate;
+      padding: 28px 16px
+    }
+
+    .catalog::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: url('https://decorcolors.com.br/wp-content/uploads/2023/03/parede-cimento-queimado.jpg') center/cover no-repeat;
+      z-index: -2
+    }
+
+    .catalog::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, .45);
+      z-index: -1
+    }
+
+    .catalogWrap {
+      max-width: 1080px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      align-items: center;
+    }
+
+    .catalog h2 {
+      color: #fff;
+      text-align: left
+    }
+
+    .catalog p {
+      color: #e5e7eb
+    }
+
+    .formBox {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 16px
+    }
+
+    .field {
+      display: flex;
+      gap: 8px;
+      margin: 8px 0
+    }
+
+    .field input,
+    .field select {
+      width: 100%;
+      padding: 12px 12px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      font-size: 14px
+    }
+
+    footer {
+      margin-top: 24px;
+      padding: 16px;
+      border-top: 1px solid var(--line);
+      color: #6b7280;
+      text-align: center;
+      font-size: 13px
+    }
+
+    .whatsFloat {
+      position: fixed;
+      right: 16px;
+      bottom: 16px;
+      background: #22c55e;
+      color: #fff;
+      font-weight: 900;
+      padding: 14px 16px;
+      border-radius: 999px;
+      z-index: 65;
+      box-shadow: 0 6px 20px rgba(4, 120, 87, .2);
+      font-size: 14px
+    }
+
+    /* ======= RESPONSIVE ======= */
+    @media(max-width:960px) {
+      .prod-grid {
+        grid-template-columns: 1fr
+      }
+
+      .catalogWrap {
+        grid-template-columns: 1fr
+      }
+    }
+
+    @media(max-width:600px) {
+      header {
+        display: none
+      }
+
+      /* esconde menu superior */
+      #fab {
+        display: block;
+      }
+
+      /* mostra FAB */
+      .productCard {
+        grid-template-columns: 90px 1fr
+      }
+
+      .productCard img {
+        height: 86px
+      }
+    }
+
+    #inicio {
+      & img {
+        display: none;
+        width: 200px;
+
+      }
+    }
+
+    @media (max-width:600px) {
+      #inicio {
+        & img {
+          display: flex;
+          margin-left: 50%;
+          transform: translate(-50%, -50%);
+          width: 200px;
+
+        }
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- DESKTOP/TABLET HEADER -->
+  <header>
+    <div class="nav">
+      <div class="logo">
+        <img src="/src/img/Decor Andradas Cinza.png" alt="Decor Colors logo" />
+      </div>
+      <nav class="menu">
+        <a class="btn" href="#contato">Contato</a>
+        <a class="btn" href="#produtos">Produtos</a>
+        <a class="btn primary" href="#catalogo">Catálogo</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- FLOAT MENU (mobile) -->
+  <button id="fab">☰</button>
+  <div id="scrim"></div>
+  <div id="sheet">
+    <div class="s-row">
+      <a class="btn" href="#contato" onclick="closeSheet()">Contato</a>
+      <a class="btn" href="#produtos" onclick="closeSheet()">Produtos</a>
+      <a class="btn primary" href="#catalogo" onclick="closeSheet()">Catálogo</a>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero" id="inicio">
+    <div>
+      <img src="/src/img/Decor-Andradas-PNG.png" alt="Decor Colors logo" />
+      <h1>Descubra a Magia das Cores Decor Colors e Transforme Seu Lar</h1>
+      <p>Visite nossa loja em Andradas e sinta a sofisticação de cada detalhe, o aconchego em cada escolha e uma
+        experiência única.</p>
+      <div class="ctaRow">
+        <a class="btn primary" href="#produtos">Ver Produtos</a>
+        <a class="btn whats" href="#catalogo">Catálogo</a>
+      </div>
+    </div>
+  </section>
+
+  <main>
+    <!-- CONTATO -->
+    <section class="section" id="contato">
+      <h2>Contato</h2>
+      <div class="contact">
+        <div class="card">
+          <div class="list">
+            <div class="row"><strong>Telefone:</strong><a href="tel:+5535997313977">(35) 99731-3977</a></div>
+            <div class="row"><strong>E-mail:</strong><a
+                href="mailto:decorcolors.mg.andradas@gmail.com">decorcolors.mg.andradas@gmail.com</a></div>
+            <div class="row"><strong>Instagram:</strong><a href="https://www.instagram.com/decorcolors.mg.andradas/"
+                target="_blank">@decorcolors.mg.andradas</a></div>
+            <div class="row"><strong>Endereço:</strong> Av. Sen. Bueno Brandão, 33 - Andradas, MG, 37795-000</div>
+          </div>
+        </div>
+        <div class="map">
+          <iframe title="Mapa" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"
+            src="https://www.google.com/maps?q=Av.%20Sen.%20Bueno%20Brandão%2C%2033%20-%20Andradas%2C%20MG%2C%2037795-000&output=embed"></iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- HORÁRIOS -->
+    <section class="hours" id="horarios">
+      <h2>Horário de Funcionamento</h2>
+      <p>Seg - Sex: 07h às 17:30</p>
+      <p>Sábado: 07h às 11:30</p>
+    </section>
+
+    <!-- PRODUTOS (compactos) -->
+    <section class="section" id="produtos">
+      <h2>Conheça nossos produtos</h2>
+      <div class="prod-grid">
+        <article class="productCard">
+          <img
+            src="https://decorcolors.com.br/wp-content/webp-express/webp-images/uploads/2024/08/lata_215kg_borracha_liquida-2-1.png.webp"
+            alt="Borracha Líquida" />
+          <div>
+            <div class="pTitle">Borracha Líquida</div>
+            <p class="pDesc">Impermeabiliza e revitaliza telhados, paredes e lajes. Hidro‑repelente e alta durabilidade.
+            </p>
+            <div class="pRow"><button class="btn whats" onclick="whats('Borracha Líquida')">Quero saber</button></div>
+          </div>
+        </article>
+        <article class="productCard">
+          <img src="https://decorcolors.com.br/wp-content/uploads/2024/08/lata_215kg_aqua_shield-1.webp"
+            alt="Tinta Piso" />
+          <div>
+            <div class="pTitle">Tinta Piso</div>
+            <p class="pDesc">Proteção para pisos cimentados. Alto rendimento e antiderrapante.</p>
+            <div class="pRow"><button class="btn whats" onclick="whats('Tinta Piso')">Quero saber</button></div>
+          </div>
+        </article>
+        <article class="productCard">
+          <img
+            src="https://decorcolors.com.br/wp-content/webp-express/webp-images/uploads/2024/08/lata_215kg_aqua_shield-1.png.webp"
+            alt="Aqua Shield" />
+          <div>
+            <div class="pTitle">Aqua Shield</div>
+            <p class="pDesc">Pintura impermeável premium para interno e externo. Resiste a sol e chuva.</p>
+            <div class="pRow"><button class="btn whats" onclick="whats('Aqua Shield')">Quero saber</button></div>
+          </div>
+        </article>
+        <article class="productCard">
+          <img
+            src="https://decorcolors.com.br/wp-content/webp-express/webp-images/uploads/2024/08/lata_215kg_rendimento_total-2-1.png.webp"
+            alt="Rendimento Total" />
+          <div>
+            <div class="pTitle">Rendimento Total</div>
+            <p class="pDesc">Baixo odor, baixo respingo e alto rendimento para grandes áreas.</p>
+            <div class="pRow"><button class="btn whats" onclick="whats('Rendimento Total')">Quero saber</button></div>
+          </div>
+        </article>
+        <article class="productCard">
+          <img
+            src="https://decorcolors.com.br/wp-content/webp-express/webp-images/uploads/2024/08/MULTI-LIMPAVEL_215-1.png.webp"
+            alt="Tinta Multi Limpável" />
+          <div>
+            <div class="pTitle">Tinta Multi Limpável</div>
+            <p class="pDesc">Super premium: limpa fácil, previne mofo e algas. Até 150m²/demão.</p>
+            <div class="pRow"><button class="btn whats" onclick="whats('Tinta Multi Limpável')">Quero saber</button>
+            </div>
+          </div>
+        </article>
+        <article class="productCard">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNkozzBlobryD7L5uivAYzvnTd-mWQ4hNjcA&s"
+            alt="Linha Easy Clean" />
+          <div>
+            <div class="pTitle">Linha Easy Clean</div>
+            <p class="pDesc">Easy Clean é uma linha de produto com uma fórmula inovadora e eficiente, que garante uma
+              limpeza profunda em segundos, sem esforço e sem complicações. </p>
+            <div class="pRow"><button class="btn whats" onclick="whats('Linha Easy Clean')">Quero
+                saber</button></div>
+          </div>
+        </article>
+        <article class="productCard">
+          <img
+            src="https://decorcolors.com.br/wp-content/webp-express/webp-images/uploads/2024/08/block-total-1.png.webp"
+            alt="Block Total" />
+          <div>
+            <div class="pTitle">Block Total</div>
+            <p class="pDesc">Combate umidade ascendente em paredes e rodapés. Aplicação direta.</p>
+            <div class="pRow"><button class="btn whats" onclick="whats('Block Total')">Quero saber</button></div>
+          </div>
+        </article>
+        <article class="productCard">
+          <img
+            src="https://decorcolors.com.br/wp-content/webp-express/webp-images/uploads/2024/08/cimento-queimado-rustico_decorcolors-1-1.png.webp"
+            alt="Cimento Queimado Rústico" />
+          <div>
+            <div class="pTitle">Cimento Queimado Rústico</div>
+            <p class="pDesc">Massa pronta de secagem rápida. Efeito rústico elegante.</p>
+            <div class="pRow"><button class="btn whats" onclick="whats('Cimento Queimado Rústico')">Quero saber</button>
+            </div>
+          </div>
+        </article>
+        <article class="productCard">
+          <img src="https://decorcolors.com.br/wp-content/webp-express/webp-images/uploads/2024/08/LATA-32-1.png.webp"
+            alt="Cimento Queimado Diamantado" />
+          <div>
+            <div class="pTitle">Cimento Queimado Diamantado</div>
+            <p class="pDesc">Microfibras brilhantes para efeito aveludado sofisticado.</p>
+            <div class="pRow"><button class="btn whats" onclick="whats('Cimento Queimado Diamantado')">Quero
+                saber</button></div>
+          </div>
+        </article>
+        <article class="productCard">
+          <img
+            src="https://decorcolors.com.br/wp-content/webp-express/webp-images/uploads/2024/08/QUARTZO-MICA-1.png.webp"
+            alt="Quartzo Mica Pedras Naturais" />
+          <div>
+            <div class="pTitle">Quartzo Mica Pedras Naturais</div>
+            <p class="pDesc">Durabilidade extrema, hidro‑repelente e efeito pedras naturais.</p>
+            <div class="pRow"><button class="btn whats" onclick="whats('Quartzo Mica Pedras Naturais')">Quero
+                saber</button></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- CATÁLOGO -->
+    <section class="catalog" id="catalogo">
+      <div class="catalogWrap">
+        <div>
+          <h2>Baixe nosso catálogo oficial</h2>
+          <p>Veja exemplos reais e conheça todas as linhas de produtos, texturas e cores da Decor Colors.</p>
+        </div>
+        <form class="formBox" id="catalogForm">
+          <div class="field"><input id="nome" name="nome" placeholder="Nome" required /></div>
+          <div class="field"><input id="fone" name="fone" placeholder="Telefone/WhatsApp" required /></div>
+          <div class="field"><input id="email" name="email" placeholder="E-mail (opcional)" type="email" /></div>
+          <div class="field" >
+            <select id="info" required name="info">
+              <option value="">Como nos conheceu?</option>
+              <option>Google</option>
+              <option>Instagram</option>
+              <option>Indicação</option>
+              <option>Passando em frente</option>
+            </select>
+          </div>
+          <button class="btn primary" id="button" type="submit">Baixar Catálogo</button>
+          <p id="formMsg" style="margin-top:8px; font-size:13px; color:#065f46; display:none">Obrigado! O download será
+            iniciado.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div>© <span id="year"></span> Decor Colors • Andradas, MG</div>
+  </footer>
+  <a class="whatsFloat" href="https://wa.me/5535997313977?text=Olá%20Decor%20Colors!%20Quero%20um%20orçamento."
+    target="_blank">WhatsApp
+  </a>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script type="text/javascript">
+    emailjs.init('thQu4j0PJ6VvUdAQ2')
+  </script>
+  <script>
+    const btn = document.getElementById('button');
+
+    document.getElementById('catalogForm')
+      .addEventListener('submit', function (event) {
+        event.preventDefault();
+
+        btn.value = 'Sending...';
+
+        const serviceID = 'default_service';
+        const templateID = 'template_p58ash7';
+
+        emailjs.sendForm(serviceID, templateID, this)
+          .then(() => {
+            btn.value = 'Send Email';
+            alert('Enviado!');
+          }, (err) => {
+            btn.value = 'Send Email';
+            alert(JSON.stringify(err));
+          });
+      });
+  </script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    function whats(prod) { const texto = encodeURIComponent(`Olá, gostaria de saber mais sobre ${prod}`); window.open(`https://wa.me/5535997313977?text=${texto}`, '_blank'); }
+
+    // Mobile sheet menu
+    const fab = document.getElementById('fab');
+    const sheet = document.getElementById('sheet');
+    const scrim = document.getElementById('scrim');
+    const openSheet = () => { sheet.style.display = 'block'; scrim.style.display = 'block'; };
+    const closeSheet = () => { sheet.style.display = 'none'; scrim.style.display = 'none'; };
+    fab.addEventListener('click', openSheet);
+    scrim.addEventListener('click', closeSheet);
+
+    // Catálogo PDF
+    const form = document.getElementById('catalogForm');
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const nome = document.getElementById('nome').value.trim();
+      const tel = document.getElementById('fone').value.trim();
+      if (!nome || !tel) { alert('Preencha Nome e Telefone para baixar.'); return; }
+      const link = document.createElement('a');
+      link.href = 'src/pdf/Catalogo 2025 - Decor Colors Andradas.pdf';
+      link.download = 'catalogo-decor-colors-andradas.pdf';
+      document.body.appendChild(link); link.click(); link.remove();
+      document.getElementById('formMsg').style.display = 'block';
+    });
+  </script>
+</body>
+
+</html>

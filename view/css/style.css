@@ -191,7 +191,7 @@
         padding: 32px 16px
     }
 
-    .section h2 {
+     h2 {
         text-align: center;
         font-size: 22px;
         font-weight: 900;
@@ -545,4 +545,78 @@
         font-size: x-small;
         display: flex;
         align-items: center;
+    }
+
+
+    /* CARROSSEL */
+    .carousel {
+        display: flex;
+        gap: 24px;
+        overflow: hidden;
+        position: relative;
+        scroll-behavior: smooth;
+        padding: 8px;
+        box-sizing: border-box;
+        width: 100%;
+    }
+
+    .carousel-track {
+        display: flex;
+        gap: 24px;
+        will-change: transform;
+    }
+
+    .carousel::-webkit-scrollbar {
+        display: none;
+    }
+
+    /* CARD SIMPLES COM BACKGROUND */
+    .highlight-card {
+        position: relative;
+        min-width: 800px;
+        height: 240px;
+        border-radius: 20px;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+        display: block;
+        text-decoration: none;
+        transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    /* HOVER PREMIUM */
+    .highlight-card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 18px 40px rgba(0, 0, 0, 0.18);
+    }
+
+    /* SELO DE NOVIDADE */
+    .highlight-card .badge {
+        position: absolute;
+        top: 5px;
+        left: 5px;
+        background: #ffd500;
+        color: #111111;
+        padding: 6px 14px;
+        border-radius: 999px;
+        font-weight: 700;
+        font-size: 12px;
+        box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+    }
+
+    /* MOBILE — PROPORÇÃO 1:3 */
+    @media (max-width: 768px) {
+        .highlight-card {
+            min-width: 95vw;
+            box-sizing: border-box;
+            height: auto;
+            aspect-ratio: 3 / 1;
+            /* largura / altura */
+        }
+
+        .highlight-card .badge {
+            font-size: 8px;
+            padding: 3px 7px;
+        }
     }

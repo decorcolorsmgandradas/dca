@@ -191,7 +191,7 @@
         padding: 32px 16px
     }
 
-     h2 {
+    h2 {
         text-align: center;
         font-size: 22px;
         font-weight: 900;
@@ -573,8 +573,9 @@
     /* CARD SIMPLES COM BACKGROUND */
     .highlight-card {
         position: relative;
-        width: 800px;
-        height: 240px;
+        min-width: 48vw;
+        height: auto;
+        aspect-ratio: 3 / 1;
         border-radius: 20px;
         background-size: cover;
         background-position: center;
@@ -585,11 +586,6 @@
         transition: transform 0.4s ease, box-shadow 0.4s ease;
     }
 
-    /* HOVER PREMIUM */
-    .highlight-card:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 18px 40px rgba(0, 0, 0, 0.18);
-    }
 
     /* SELO DE NOVIDADE */
     .highlight-card .badge {
@@ -609,10 +605,10 @@
     @media (max-width: 768px) {
         .highlight-card {
             min-width: 95vw;
-            box-sizing: border-box;
             height: auto;
+            /* ← ISSO É O QUE FALTAVA */
             aspect-ratio: 3 / 1;
-            /* largura / altura */
+            box-sizing: border-box;
         }
 
         .highlight-card .badge {

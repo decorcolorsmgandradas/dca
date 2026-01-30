@@ -20,8 +20,10 @@
         <img src="view/assets/img/Decor Andradas Cinza.png" alt="Decor Colors logo" />
       </div>
       <nav class="menu">
+
         <a class="btn" href="#contato">Contato</a>
         <a class="btn" href="#produtos">Produtos</a>
+        <a class="btn primary" href="#ContatoPintores">Contato de Pintores</a>
         <a class="btn primary" href="#catalogo">Catálogo</a>
       </nav>
     </div>
@@ -34,6 +36,7 @@
     <div class="s-row">
       <a class="btn" href="#contato" onclick="closeSheet()">Contato</a>
       <a class="btn" href="#produtos" onclick="closeSheet()">Produtos</a>
+      <a class="btn primary" href="#ContatoPintores" onclick="closeSheet()">Contato de Pintores</a>
       <a class="btn primary" href="#catalogo" onclick="closeSheet()">Catálogo</a>
     </div>
   </div>
@@ -82,7 +85,7 @@
     </section>
 
     <!-- Pintores -->
-    <section class="secao-pintores">
+    <section id="ContatoPintores" class="secao-pintores">
       <h2>Precisa de um pintor?</h2>
       <p>Consulte a nossa carteira de pintores parceiros.</p>
       <button class="btn primary" onclick="abrirModal()">Ver contatos</button>
@@ -154,24 +157,21 @@
     </div>
 
     <!-- CAROUSEL NOVIDADES -->
-     <br>
-      <h2>Fique por dentro das novidades!</h2>
+    <br>
+    <h2>Fique por dentro das novidades!</h2>
     <div class="carousel">
       <div class="carousel-track">
 
         <a href="https://wa.me/5535997313977?text=Olá!%20Quero%20saber%20mais%20sobre%20o%20Block%20Trinca"
-          target="_blank" class="highlight-card"
-          style="background-image: url('view/assets/img/Novidade1.jpg');">
+          target="_blank" class="highlight-card" style="background-image: url('view/assets/img/Novidade1.jpg');">
           <span class="badge"><i class="bi bi-stars"></i> Novidade</span>
         </a>
         <a href="https://wa.me/5535997313977?text=Olá!%20Quero%20saber%20mais%20sobre%20as%20Ferramentas"
-          target="_blank" class="highlight-card"
-          style="background-image: url('view/assets/img/novidade\ 2.png');">
+          target="_blank" class="highlight-card" style="background-image: url('view/assets/img/novidade\ 2.png');">
           <span class="badge"><i class="bi bi-stars"></i> Novidade</span>
         </a>
         <a href="https://wa.me/5535997313977?text=Olá!%20Quero%20saber%20mais%20sobre%20o%20Easy%20Clean"
-          target="_blank" class="highlight-card"
-          style="background-image: url('view/assets/img/novidade\ 3.png');">
+          target="_blank" class="highlight-card" style="background-image: url('view/assets/img/novidade\ 3.png');">
           <span class="badge"><i class="bi bi-stars"></i> Novidade</span>
         </a>
 
@@ -186,7 +186,6 @@
     <!-- PRODUTOS (compactos) -->
     <section class="section" id="produtos">
       <br>
-      br
       <h2>Conheça nossos produtos</h2>
       <div class="prod-grid">
         <article class="productCard">

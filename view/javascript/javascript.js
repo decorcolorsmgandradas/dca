@@ -38,7 +38,7 @@ form.addEventListener('submit', (e) => {
   const tel = document.getElementById('fone').value.trim();
   if (!nome || !tel) { alert('Preencha Nome e Telefone para baixar.'); return; }
   const link = document.createElement('a');
-  link.href = '/view/assets/pdf/Catalogo 2025 - Decor Colors Andradas.pdf';
+  link.href = 'view/assets/pdf/Catalogo 2025 - Decor Colors Andradas.pdf';
   link.download = 'catalogo-decor-colors-andradas.pdf';
   document.body.appendChild(link); link.click(); link.remove();
   document.getElementById('formMsg').style.display = 'block';
@@ -117,3 +117,32 @@ window.addEventListener('resize', () => {
   track.style.transform = `translateX(${position}px)`;
 });
 //////////////////////////////////////////////////////////////////////////////////////
+
+//Baixar leque de cores
+function openModal(){
+  document.getElementById('pdfModal').style.display = 'flex';
+}
+
+function closeModal(){
+  document.getElementById('pdfModal').style.display = 'none';
+}
+
+window.onclick = function(e){
+  const modal = document.getElementById('pdfModal');
+  if(e.target === modal){
+    closeModal();
+  }
+}
+
+//////////////////////////////////////////////////////////////////////////////////////
+
+//SIMULAÇÃO DE AMBIENTE
+function fecharSimulacao(){
+  document.getElementById("simulacaoModal").style.display = "none";
+  document.getElementById("reabrirBtn").style.display = "block";
+}
+
+function abrirSimulacao(){
+  document.getElementById("simulacaoModal").style.display = "block";
+  document.getElementById("reabrirBtn").style.display = "none";
+}

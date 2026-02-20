@@ -24,7 +24,7 @@
         <a class="btn" href="#contato">Contato</a>
         <a class="btn" href="#produtos">Produtos</a>
         <a class="btn primary" href="#ContatoPintores">Contato de Pintores</a>
-        <a class="btn primary" href="#catalogo">Catálogo</a>
+        <a class="btn primary" href="#catalogo">Catálogo de Produtos</a>
       </nav>
     </div>
   </header>
@@ -37,7 +37,7 @@
       <a class="btn" href="#contato" onclick="closeSheet()">Contato</a>
       <a class="btn" href="#produtos" onclick="closeSheet()">Produtos</a>
       <a class="btn primary" href="#ContatoPintores" onclick="closeSheet()">Contato de Pintores</a>
-      <a class="btn primary" href="#catalogo" onclick="closeSheet()">Catálogo</a>
+      <a class="btn primary" href="#catalogo" onclick="closeSheet()">Catálogo de Produtos</a>
     </div>
   </div>
 
@@ -49,11 +49,55 @@
       <p>Visite nossa loja em Andradas e sinta a sofisticação de cada detalhe, o aconchego em cada escolha e uma
         experiência única.</p>
       <div class="ctaRow">
-        <a class="btn primary" href="#produtos">Ver Produtos</a>
-        <a class="btn whats" href="#catalogo">Catálogo</a>
+        <a class="btn primary" href="#catalogo">Catálogo de Produtos</a>
+        <a class="btn whats" onclick="openModal()">Cartela de Cores</a>
       </div>
     </div>
   </section>
+  <div class="modal" id="pdfModal">
+    <div id="simulacaoModal" class="simulacao-modal">
+      <div class="simulacao-content">
+        <span class="fechar" onclick="fecharSimulacao()">✕</span>
+        <h3>🎨 Criar Simulação de Ambiente</h3>
+        <p>
+          Quer ver como sua parede pode ficar?
+          Faça uma simulação gratuita agora mesmo!
+        </p>
+        <p class="obs">
+          Obs: A simulação serve apenas para ter uma ideia visual.
+          A cor pode variar na prática devido à iluminação e superfície.
+        </p>
+
+        <a href="https://wa.me/5535997313977?text=Olá! Quero fazer uma simulação de ambiente 🎨" target="_blank"
+          class="btn-whats">
+          Fazer Simulação no WhatsApp
+        </a>
+      </div>
+    </div>
+
+    <!-- BOTÃO PARA REABRIR -->
+    <button id="reabrirBtn" class="reabrir-btn" onclick="abrirSimulacao()">
+      🎨 Simulação
+    </button>
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h2>Visualização do Documento</h2>
+        <span class="close" onclick="closeModal()">✕</span>
+      </div>
+
+      <div class="modal-body">
+        <iframe src="view/assets/pdf/Cartela de Cores - DecorColors.pdf"></iframe>
+      </div>
+
+      <div class="modal-footer">
+        <a href="view/assets/pdf/Cartela de Cores - DecorColors.pdf" download class="download-btn">
+          Download <i class="bi bi-file-earmark-arrow-down-fill"></i>
+        </a>
+      </div>
+
+    </div>
+  </div>
 
   <main>
     <!-- CONTATO -->

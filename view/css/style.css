@@ -203,7 +203,7 @@
         place-items: center;
         text-align: center;
         padding: 40px 16px;
-        isolation: isolate
+        isolation: isolate;  
     }
 
     .hero::before {
@@ -451,7 +451,35 @@
         & img {
             margin-right: 5px;
         }
+
+        & small {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: inherit;
+            position: absolute;
+            left: 20px;
+            top: 0;
+            background: red;
+            color: #fff;
+            min-width: 20px;
+            height: 20px;
+            font-weight: bold;
+            border-radius: 10px;
+            padding: 0 6px;
+            font-size: 0.8em;
+            margin-top: -10px;
+            margin-right: -10px;
+            animation: notification 0.3s infinite alternate;
+        }
     }
+
+    @keyframes notification {
+        to {
+            transform: translateY(-2px);
+        }
+    }
+
 
     #inicio {
         & img {
@@ -480,6 +508,7 @@
         /* esconde menu superior */
         #fab {
             display: block;
+            font-size: 25px;
         }
 
         /* mostra FAB */
@@ -657,64 +686,79 @@
 
 
     /* SELO DE NOVIDADE */
-   .badges {
-    display: flex;          /* Essencial para alinhar os badges lado a lado */
-    align-items: center;    /* Centraliza os badges verticalmente nos 20px */
-    gap: 5px;               /* Espaçamento entre múltiplos badges */
-    transform: translateY(-50%);
-    padding: 0px 5px;
-    box-sizing: border-box;
-    width: 100%;
-    height: 20px;
-}
+    .badges {
+        display: flex;
+        /* Essencial para alinhar os badges lado a lado */
+        align-items: center;
+        /* Centraliza os badges verticalmente nos 20px */
+        gap: 5px;
+        /* Espaçamento entre múltiplos badges */
+        transform: translateY(-50%);
+        padding: 0px 5px;
+        box-sizing: border-box;
+        width: 100%;
+        height: 20px;
+    }
 
-.badges .badge {
-    height: 100%;           /* Ocupa os 20px do pai */
-    width: fit-content;     /* Ajusta a largura ao texto interno */
-    display: flex;          /* Permite centralizar o texto internamente */
-    align-items: center;    /* Centraliza o texto verticalmente */
-    justify-content: center;/* Centraliza o texto horizontalmente */
-    border-radius: 999px;
-    box-sizing: border-box;
-    font-size: 10px;
-    font-weight: 700;
-    padding: 0 7px;
-    white-space: nowrap;    /* Impede que o texto quebre linha */
-     & i{
-        margin: 0 5px 0 0;
-     }
+    .badges .badge {
+        height: 100%;
+        /* Ocupa os 20px do pai */
+        width: fit-content;
+        /* Ajusta a largura ao texto interno */
+        display: flex;
+        /* Permite centralizar o texto internamente */
+        align-items: center;
+        /* Centraliza o texto verticalmente */
+        justify-content: center;
+        /* Centraliza o texto horizontalmente */
+        border-radius: 999px;
+        box-sizing: border-box;
+        font-size: 10px;
+        font-weight: 700;
+        padding: 0 7px;
+        white-space: nowrap;
 
-}
-.badges .yellow{
-    background: #ffde21;
-    color: black;
-}
-.badges .blue{
-    background: #2c82b5;
-    color: white;
-}
-.badges .red{
-    background: #ff2c2c;
-    color: white;
-}
+        /* Impede que o texto quebre linha */
+        & i {
+            margin: 0 5px 0 0;
+        }
 
-.badges .green{
-    background: #83e509;
-    color: white;
-}
-.badges .pink{
-    background: rgb(255, 0, 136);
-    color: white;
-}
-.badges .orange{
-    background:#eb983c;
-    color: white;
-}
+    }
 
-.badges .purple{
-    background:#8e43b5;
-    color: white;
-}
+    .badges .yellow {
+        background: #ffde21;
+        color: black;
+    }
+
+    .badges .blue {
+        background: #2c82b5;
+        color: white;
+    }
+
+    .badges .red {
+        background: #ff2c2c;
+        color: white;
+    }
+
+    .badges .green {
+        background: #83e509;
+        color: white;
+    }
+
+    .badges .pink {
+        background: rgb(255, 0, 136);
+        color: white;
+    }
+
+    .badges .orange {
+        background: #eb983c;
+        color: white;
+    }
+
+    .badges .purple {
+        background: #8e43b5;
+        color: white;
+    }
 
     /* MOBILE — PROPORÇÃO 1:3 */
     @media (max-width: 768px) {

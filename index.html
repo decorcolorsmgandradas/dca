@@ -13,12 +13,21 @@
 </head>
 
 <body>
+  <!-- Botão whatsapp -->
+  <a class="whatsFloat" href="https://wa.me/5535997313977?text=Olá%20Decor%20Colors!%20Quero%20um%20orçamento."
+    target="_blank">
+    <img src="view/assets/img/whatsapp.png" style="width: 30px;" alt="">
+    WhatsApp
+    <small>1</small>
+  </a>
+
+
   <!-- Modal Promoção -->
   <div id="popup">
     <div id="popupContent">
       <i id="fecharBtn" onclick="fecharPopup()" class="bi bi-x-circle-fill"></i>
 
-     <img src="view/assets/img/promoaniversario.png" alt="">
+      <img src="view/assets/img/promoaniversario.png" alt="">
 
     </div>
   </div>
@@ -40,7 +49,7 @@
   </header>
 
   <!-- FLOAT MENU (mobile) -->
-  <button id="fab">☰</button>
+  <button id="fab"><i class="bi bi-list"></i></button>
   <div id="scrim"></div>
   <div id="sheet">
     <div class="s-row">
@@ -84,6 +93,7 @@
         </a>
       </div>
     </div>
+
 
     <!-- BOTÃO PARA REABRIR -->
     <button id="reabrirBtn" class="reabrir-btn" onclick="abrirSimulacao()">
@@ -413,11 +423,7 @@
         src="view/assets/img/logo escrita vazada laranja.png" style="width: 100px;margin-top: 15px;"
         alt="Logo Amsterdam"></a>
   </footer>
-  <a class="whatsFloat" href="https://wa.me/5535997313977?text=Olá%20Decor%20Colors!%20Quero%20um%20orçamento."
-    target="_blank">
-    <img src="view/assets/img/whatsapp.png" style="width: 30px;" alt="">
-    WhatsApp
-  </a>
+
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <script type="text/javascript">
     emailjs.init('thQu4j0PJ6VvUdAQ2')
